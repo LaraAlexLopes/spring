@@ -28,6 +28,7 @@ public class Order implements Serializable {
 	private Long id;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z", timezone = "GMT")
 	private Instant moment;
+	
 	private Integer orderStatus;
 	
 	@JsonIgnore
@@ -42,8 +43,8 @@ public class Order implements Serializable {
 		super();
 		this.id = id;
 		this.moment = moment;
-		setOrderStatus(orderStatus);
 		this.client = client;
+		setOrderStatus(orderStatus);
 	}
 
 	public Long getId() {
